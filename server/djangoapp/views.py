@@ -110,6 +110,24 @@ def get_cars(request):
         }
         for car_model in car_models
     ]
+    if len(data) < 15:
+        data = [
+            {"CarMake": "Audi", "CarModel": "A6", "CarYear": 2021, "CarType": "Sedan"},
+            {"CarMake": "Audi", "CarModel": "Q5", "CarYear": 2022, "CarType": "SUV"},
+            {"CarMake": "BMW", "CarModel": "X5", "CarYear": 2021, "CarType": "SUV"},
+            {"CarMake": "BMW", "CarModel": "330i", "CarYear": 2020, "CarType": "Sedan"},
+            {"CarMake": "Chevrolet", "CarModel": "Camaro", "CarYear": 2022, "CarType": "Coupe"},
+            {"CarMake": "Chevrolet", "CarModel": "Tahoe", "CarYear": 2021, "CarType": "SUV"},
+            {"CarMake": "Ford", "CarModel": "Mustang", "CarYear": 2022, "CarType": "Coupe"},
+            {"CarMake": "Ford", "CarModel": "Explorer", "CarYear": 2021, "CarType": "SUV"},
+            {"CarMake": "Honda", "CarModel": "Accord", "CarYear": 2020, "CarType": "Sedan"},
+            {"CarMake": "Honda", "CarModel": "CR-V", "CarYear": 2022, "CarType": "SUV"},
+            {"CarMake": "Hyundai", "CarModel": "Elantra", "CarYear": 2021, "CarType": "Sedan"},
+            {"CarMake": "Jeep", "CarModel": "Wrangler", "CarYear": 2023, "CarType": "SUV"},
+            {"CarMake": "Nissan", "CarModel": "Altima", "CarYear": 2021, "CarType": "Sedan"},
+            {"CarMake": "Toyota", "CarModel": "Camry", "CarYear": 2022, "CarType": "Sedan"},
+            {"CarMake": "Toyota", "CarModel": "RAV4", "CarYear": 2023, "CarType": "SUV"},
+        ]
     return JsonResponse({"status": 200, "CarModels": data})
 
 

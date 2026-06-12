@@ -33,9 +33,8 @@ def login_user(request):
 
 # Create a `logout_request` view to handle sign out request
 def logout_request(request):
-    username = request.user.username if request.user.is_authenticated else ""
     logout(request)
-    return JsonResponse({"userName": username, "status": "Logged out"})
+    return JsonResponse({"userName": "", "status": "Logged out"})
 
 
 # Create a `registration` view to handle sign up request
